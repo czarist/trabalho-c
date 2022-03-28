@@ -17,19 +17,24 @@ int main()
 	std::cin >> L;
 
 	if (L <= -1) {
+		//valida se o número é positivo
 		std::cout << "Somente numeros positivos:\n ";
 		system("pause");
 		exit(1);
-	}
-
-	else {
+	} else if (std::cin.fail()) {
+		//valida se foi digitado alguma letra
+		std::cout << "Somente numeros:\n ";
+		system("pause");
+		exit(1);
+	} else {
 		calcula_hexa(L, &A, &P);
-		std::cout << "area: \n";
+		std::cout << "area: ";
 		std::cout << A;
-		std::cout << "perimetro: \n";
+		std::cout << "\n";
+		std::cout << "perimetro: ";
 		std::cout << P;
+		std::cout << "\n";
 	}
 
-	system("pause");
 	return 0;
-
+}
